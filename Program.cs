@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,7 +14,6 @@ namespace Trabajo1_BDD
         static void Main(string[] args)
         {
 
-            // Ejercicio 1
 
             //              EJERCICIO 1
 
@@ -56,7 +56,13 @@ namespace Trabajo1_BDD
 
             // Console.ReadLine();
 
-            //ejercicio 2
+
+            //---------------------------------------------------------------------------------------------
+
+
+            //              EJERCICIO #2
+
+
             //Socio socio1 = new Socio("Eduardo", "Valladares", "1001");
             //Socio socio2 = new Socio("Carlos", "Perez", "1002");
 
@@ -105,6 +111,15 @@ namespace Trabajo1_BDD
             //Console.WriteLine(ahorro1.CerrarCuenta());
 
             //Console.ReadKey();
+
+
+            //----------------------------------------------------------------------------------------------
+
+            //              EJERCICIO #3
+
+
+            Console.Clear();
+            Ejercicio_3.Ejercicio3_Transporte.Ejecutar();
         }
     }
 
