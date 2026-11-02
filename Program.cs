@@ -12,7 +12,11 @@ namespace Trabajo1_BDD
     {
         static void Main(string[] args)
         {
+
             // Ejercicio 1
+
+            //              EJERCICIO 1
+
             // Biblioteca miBiblioteca = new Biblioteca();
 
             // Usuario user1 = new Usuario("1002003004", "Andy Guamba");
@@ -52,56 +56,72 @@ namespace Trabajo1_BDD
 
             // Console.ReadLine();
 
-            Socio socio1 = new Socio("Eduardo", "Valladares", "1001");
-            Socio socio2 = new Socio("Carlos", "Perez", "1002");
+            //ejercicio 2
+            //Socio socio1 = new Socio("Eduardo", "Valladares", "1001");
+            //Socio socio2 = new Socio("Carlos", "Perez", "1002");
 
-            CuentaAhorro ahorro1 = new CuentaAhorro(4, socio1, 500);
-            CuentaCorriente corriente1 = new CuentaCorriente(socio1, 100);
+            //CuentaAhorro ahorro1 = new CuentaAhorro(4, socio1, 500);
+            //CuentaCorriente corriente1 = new CuentaCorriente(socio1, 100);
 
-            CuentaAhorro ahorro2 = new CuentaAhorro(4, socio2, 1000);
-            CuentaCorriente corriente2 = new CuentaCorriente(socio2, 50);
+            //CuentaAhorro ahorro2 = new CuentaAhorro(4, socio2, 1000);
+            //CuentaCorriente corriente2 = new CuentaCorriente(socio2, 50);
 
-            socio1.AgregarCuenta(ahorro1);
-            socio1.AgregarCuenta(corriente1);
+            //socio1.AgregarCuenta(ahorro1);
+            //socio1.AgregarCuenta(corriente1);
 
-            socio2.AgregarCuenta(ahorro2);
-            socio2.AgregarCuenta(corriente2);
+            //socio2.AgregarCuenta(ahorro2);
+            //socio2.AgregarCuenta(corriente2);
 
-            Reporte.AgregarSocio(socio1);
-            Reporte.AgregarSocio(socio2);
+            //Reporte.AgregarSocio(socio1);
+            //Reporte.AgregarSocio(socio2);
 
-            Console.WriteLine(ahorro1.Depositar(100));
-            Console.WriteLine(ahorro1.Retirar(50));
+            //Console.WriteLine(ahorro1.Depositar(100));
+            //Console.WriteLine(ahorro1.Retirar(50));
 
-            Console.WriteLine(
-            Cuenta.Transferir(ahorro1, corriente1, 200));
+            //Console.WriteLine(
+            //Cuenta.Transferir(ahorro1, corriente1, 200));
 
-            Console.WriteLine(
-            Cuenta.Transferir(ahorro1, corriente1, 1000));
+            //Console.WriteLine(
+            //Cuenta.Transferir(ahorro1, corriente1, 1000));
 
-            Console.WriteLine(corriente1.Retirar(300));
+            //Console.WriteLine(corriente1.Retirar(300));
 
-            ahorro1.AplicarInteresMensual();
-            ahorro2.AplicarInteresMensual();
+            //ahorro1.AplicarInteresMensual();
+            //ahorro2.AplicarInteresMensual();
 
-            Console.WriteLine(Reporte.EstadoCuenta(ahorro1));
-            Console.WriteLine(Reporte.EstadoCuenta(corriente1));
+            //Console.WriteLine(Reporte.EstadoCuenta(ahorro1));
+            //Console.WriteLine(Reporte.EstadoCuenta(corriente1));
 
-            Console.WriteLine(Reporte.InteresesCuentasAhorro());
-            Console.WriteLine(Reporte.CuentasSobreGiro());
+            //Console.WriteLine(Reporte.InteresesCuentasAhorro());
+            //Console.WriteLine(Reporte.CuentasSobreGiro());
 
-            Console.WriteLine(
-                Reporte.TotalDepositadoRetirado(
-                    DateTime.Now.AddMonths(-1),
-                    DateTime.Now));
+            //Console.WriteLine(
+            //    Reporte.TotalDepositadoRetirado(
+            //        DateTime.Now.AddMonths(-1),
+            //        DateTime.Now));
 
-            Console.WriteLine(Reporte.AuditoriaSaldos());
+            //Console.WriteLine(Reporte.AuditoriaSaldos());
 
-            Console.WriteLine(ahorro1.CerrarCuenta());
+            //Console.WriteLine(ahorro1.CerrarCuenta());
 
-            Console.ReadKey();
-
+            //Console.ReadKey();
         }
     }
-    
+
 }
+
+
+
+
+
+
+
+
+
+
+         
+   
+
+
+    
+
