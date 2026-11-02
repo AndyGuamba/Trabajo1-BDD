@@ -50,11 +50,18 @@
     <Compile Include="Ejercicio_1\Prestamo.cs" />
     <Compile Include="Ejercicio_1\Revista.cs" />
     <Compile Include="Ejercicio_1\Usuario.cs" />
+    <Compile Include="Ejercicio_2\CuentaCorriente.cs" />
+    <Compile Include="Ejercicio_2\Cuenta.cs" />
+    <Compile Include="Ejercicio_2\CuentaAhorro.cs" />
+    <Compile Include="Ejercicio_2\RegistroTransferencia.cs" />
+    <Compile Include="Ejercicio_2\Reporte.cs" />
+    <Compile Include="Ejercicio_2\Socio.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
