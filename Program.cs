@@ -120,23 +120,11 @@ namespace Trabajo1_BDD
 
             Console.Clear();
             Ejercicio_3.Ejercicio3_Transporte.Ejecutar();
+
+            //----------------------------------------------------------------------------------------------
+
+            //              EJERCICIO #5
+            Console.WriteLine("=== SISTEMA TIENDA DE ARTESANÍAS OTAVALO ===");
         }
     }
-
 }
-
-
-
-
-
-
-
-
-
-
-         
-   
-
-
-    
-

@@ -94,6 +94,14 @@
     <Compile Include="Ejercicio_3\Pasajero.cs" />
     <Compile Include="Ejercicio_3\Viaje.cs" />
 
+    <Compile Include="Ejercicio_5\Artesania.cs" />
+    <Compile Include="Ejercicio_5\Artesano.cs" />
+    <Compile Include="Ejercicio_5\Comunidad.cs" />
+    <Compile Include="Ejercicio_5\Movimiento.cs" />
+    <Compile Include="Ejercicio_5\TallaMadera.cs" />
+    <Compile Include="Ejercicio_5\Textil.cs" />
+    <Compile Include="Ejercicio_5\Tienda.cs" />
+
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
