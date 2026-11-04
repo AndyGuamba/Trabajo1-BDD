@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Project_Factory
+namespace Trabajo1_BDD.Ejercicio_5
 {
     public class Movimiento
     {

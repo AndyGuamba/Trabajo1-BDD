@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Trabajo1_BDD.Ejercicio_1;
 using Trabajo1_BDD.Ejercicio_2;
+using Trabajo1_BDD.Ejercicio_5;
 
 namespace Trabajo1_BDD
 {
@@ -123,8 +124,70 @@ namespace Trabajo1_BDD
 
             //----------------------------------------------------------------------------------------------
 
-            //              EJERCICIO #5
-            Console.WriteLine("=== SISTEMA TIENDA DE ARTESANÍAS OTAVALO ===");
+            //              EJERCICIO #5 
+            /*
+            Console.WriteLine();
+            Tienda tienda = new Tienda();
+
+            Comunidad comPeguche = new Comunidad("C01", "Peguche");
+            Comunidad comQuinchuqui = new Comunidad("C02", "Quinchuqui");
+            tienda.Comunidades.Add(comPeguche);
+            tienda.Comunidades.Add(comQuinchuqui);
+
+            Artesano artesano1 = new Artesano("María", "Andrango", "1001112223", "0991112233", "maria@mail.com", comPeguche);
+            Artesano artesano2 = new Artesano("José", "Cachimuel", "1003334445", "0994445566", "jose@mail.com", comQuinchuqui);
+            tienda.Artesanos.Add(artesano1);
+            tienda.Artesanos.Add(artesano2);
+
+            tienda.RegistrarRecepcion("M01", "TXT-01", "Poncho Otavalo Tradicional", 100.0, 10, artesano1, true, DateTime.Now.AddDays(-100));
+            tienda.RegistrarRecepcion("M02", "MAD-01", "Batea Tallada en Cedro", 80.0, 5, artesano2, false, DateTime.Now.AddDays(-10));
+
+            try
+            {
+                tienda.RegistrarVenta("M03", "TXT-01", 2, DateTime.Now);
+                tienda.RegistrarVenta("M04", "MAD-01", 1, DateTime.Now);
+                tienda.RegistrarDevolucion("M05", "TXT-01", 1, artesano1, DateTime.Now);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Aviso operacional: {ex.Message}");
+            }
+
+            try
+            {
+                tienda.RegistrarVenta("M06", "TXT-01", 20, DateTime.Now);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"- Restricción aplicada: {ex.Message}");
+            }
+
+            try
+            {
+
+                tienda.EliminarArtesano("1001112223");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"- Restricción aplicada: {ex.Message}");
+            }
+
+            Console.WriteLine("\nReportes Administrativos\n");
+
+            tienda.ReporteAuditoriaStock();
+            Console.WriteLine();
+
+            tienda.ReporteArtesaniasDevolver();
+            Console.WriteLine();
+
+            tienda.ReporteLiquidacionArtesanos(DateTime.Now.AddDays(-30), DateTime.Now.AddDays(1));
+            Console.WriteLine();
+
+            tienda.ReporteComunidadesConMasVentas();
+            Console.WriteLine();
+
+            tienda.ReporteArtesaniasMasVendidas();
+            */
         }
     }
 }
