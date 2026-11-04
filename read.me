@@ -1,37 +1,55 @@
-Trabajo1-BDD
+# Trabajo1-BDD
 
-Proyecto grupal desarrollado en C# (.NET Framework) con Visual Studio 2026. Es una aplicación de consola que reúne varios ejercicios de modelado y programación orientada a objetos, cada uno a cargo de un integrante del equipo.
+Proyecto grupal desarrollado en **C# (.NET Framework)** con **Visual Studio 2026**. Es una aplicación de consola que reúne cinco ejercicios de modelado y programación orientada a objetos, cada uno a cargo de un integrante del equipo.
 
 Repositorio: https://github.com/AndyGuamba/Trabajo1-BDD.git
 
-Integrantes y responsabilidades
-#	Integrante	Parte asignada	Estado
-1	Andy Guamba	Ejercicio 1: Sistema de Biblioteca	Completado
-2	Sebastián Valladares	Ejercicio 2: Sistema de Cuentas (Ahorro y Corriente)	Completado
-3	Héctor Quicuango	Ejercicio 3: Cooperativa de Transporte	Completado
-4	Ana Belén	Ejercicio 4	Pendiente
-5	Danilo Godoy	Ejercicio 5: Tienda de Artesanías de Otavalo	Completado
-Requisitos
-Visual Studio 2019 o superior
-.NET Framework (proyecto de aplicación de consola)
-Git
+---
 
-El Ejercicio 3 usa System.Text.Json. Si Visual Studio no lo reconoce, instalar el paquete NuGet System.Text.Json.
+## Integrantes y responsabilidades
 
-Cómo ejecutar
-Clonar el repositorio:
-bash
+| # | Integrante | Parte asignada | Estado |
+|---|------------|----------------|--------|
+| 1 | Andy Guamba | Ejercicio 1: Sistema de Biblioteca | Completado |
+| 2 | Sebastián Valladares | Ejercicio 2: Sistema de Cuentas (Ahorro y Corriente) | Completado |
+| 3 | Héctor Quicuango | Ejercicio 3: Cooperativa de Transporte | Completado |
+| 4 | Ana Belén | Ejercicio 4: Cafetería de la UTN | Completado |
+| 5 | Daniel Godoy | Ejercicio 5: Tienda de Artesanías | Completado |
+
+---
+
+## Requisitos
+
+- Visual Studio 2019 o superior
+- .NET Framework (proyecto de aplicación de consola)
+- Git
+
+> El Ejercicio 3 usa `System.Text.Json`. Si Visual Studio no lo reconoce, instalar el paquete NuGet **System.Text.Json**.
+
+## Cómo ejecutar
+
+1. Clonar el repositorio:
+   ```bash
    git clone https://github.com/AndyGuamba/Trabajo1-BDD.git
-Abrir la solución Trabajo1-BDD.sln en Visual Studio.
-En Program.cs, dejar descomentado únicamente el ejercicio que se desea probar (los demás están comentados).
-Presionar F5 o Ctrl + F5 para ejecutar.
+   ```
+2. Abrir la solución `Trabajo1-BDD.sln` en Visual Studio.
+3. En `Program.cs`, dejar **descomentado únicamente el ejercicio que se desea probar** (los demás están comentados).
+4. Presionar `F5` o `Ctrl + F5` para ejecutar.
 
-Actualmente Program.cs ejecuta el Ejercicio 3:
+Actualmente `Program.cs` ejecuta el **Ejercicio 3**:
 
-csharp
+```csharp
 Console.Clear();
 Ejercicio_3.Ejercicio3_Transporte.Ejecutar();
-Estructura del proyecto
+```
+
+Los ejercicios 1, 2, 4 y 5 son pruebas de consola que se activan quitando los comentarios de su bloque en `Program.cs`. Al activar uno, comentar el que estaba activo para que no se ejecuten juntos.
+
+---
+
+## Estructura del proyecto
+
+```
 Trabajo1-BDD/
 ├── Program.cs                  # Punto de entrada, pruebas de cada ejercicio
 ├── Ejercicio_1/                # Biblioteca
@@ -42,7 +60,7 @@ Trabajo1-BDD/
 │   ├── Usuario.cs
 │   ├── Prestamo.cs
 │   └── Biblioteca.cs
-├── Ejercicio_2/                # Cuentas bancarias
+├── Ejercicio_2/                # Cuentas de la cooperativa
 │   ├── Cuenta.cs
 │   ├── CuentaAhorro.cs
 │   ├── CuentaCorriente.cs
@@ -55,135 +73,245 @@ Trabajo1-BDD/
 │   ├── Pasajero.cs
 │   ├── DatosTransporte.cs
 │   └── Ejercicio3_Transporte.cs
+├── Ejercicio_4/                # Cafetería
+│   ├── Producto.cs
+│   ├── Plato.cs
+│   ├── Bebida.cs
+│   ├── Ingrediente.cs
+│   ├── RecetaElemento.cs
+│   └── Cafeteria.cs
 └── Ejercicio_5/                # Tienda de artesanías
     ├── Artesania.cs
+    ├── Textil.cs
+    ├── TallaMadera.cs
     ├── Artesano.cs
     ├── Comunidad.cs
     ├── Movimiento.cs
-    ├── TallaMadera.cs
-    ├── Textil.cs
     └── Tienda.cs
+```
 
-Ejercicio 1: Sistema de Biblioteca
+---
 
-Responsable: Andy Guamba
+## Ejercicio 1: Sistema de Biblioteca
+
+**Responsable:** Andy Guamba
 
 Gestiona el préstamo de materiales (libros y revistas) a los usuarios de una biblioteca.
 
-Clases principales
-Material (base), con Libro y Revista como derivadas.
-Ejemplar: copia física de un material, con código y disponibilidad.
-Usuario: cédula, nombre, multas pendientes e historial de préstamos.
-Prestamo: relaciona usuario y ejemplar; guarda fecha de salida, días permitidos, tarifa de multa, fecha de entrega y multa generada.
-Biblioteca: contiene usuarios, ejemplares y préstamos, y genera los reportes.
-Reglas de negocio
-Material	Días de préstamo	Multa por día de retraso
-Libro	7	$0.25
-Revista	3	$0.50
-Un usuario puede tener como máximo 3 préstamos activos.
-Un usuario con multas pendientes no puede solicitar nuevos préstamos.
-Al devolver, si hay retraso, la multa se calcula como días de retraso × tarifa y se suma a las multas pendientes del usuario.
-Reportes
-Auditoría de ejemplares disponibles
-Préstamos vencidos
-Historial de un usuario
-Materiales más prestados
-Multas recaudadas por período
-Ejercicio 2: Sistema de Cuentas
+### Clases principales
 
-Responsable: Sebastián Valladares
+- **Material** (base), con **Libro** y **Revista** como derivadas.
+- **Ejemplar**: copia física de un material, con código y disponibilidad.
+- **Usuario**: cédula, nombre, multas pendientes e historial de préstamos.
+- **Prestamo**: relaciona usuario y ejemplar; guarda fecha de salida, días permitidos, tarifa de multa, fecha de entrega y multa generada.
+- **Biblioteca**: contiene usuarios, ejemplares y préstamos, y genera los reportes.
 
-Modela socios con cuentas de ahorro y corriente, con operaciones y reportes.
+### Reglas de negocio
 
-Clases principales
-Socio: titular que puede tener varias cuentas.
-Cuenta (base), con CuentaAhorro y CuentaCorriente como derivadas.
-RegistroTransferencia: registro de movimientos entre cuentas.
-Reporte: consultas y reportes generales.
-Operaciones
-Depositar y retirar
-Transferir entre cuentas
-Aplicar interés mensual (cuentas de ahorro)
-Cerrar cuenta
-Reportes
-Estado de cuenta
-Intereses de cuentas de ahorro
-Cuentas en sobregiro
-Total depositado y retirado en un período
-Auditoría de saldos
-Ejercicio 3: Cooperativa de Transporte
+| Material | Días de préstamo | Multa por día de retraso |
+|----------|------------------|--------------------------|
+| Libro | 7 | $0.25 |
+| Revista | 3 | $0.50 |
 
-Responsable: Héctor Quiguango
+- Un usuario puede tener como máximo **3 préstamos activos**.
+- Un usuario con **multas pendientes** no puede solicitar nuevos préstamos.
+- Al devolver, si hay retraso, la multa se calcula como `días de retraso × tarifa` y se suma a las multas pendientes del usuario.
 
-Aplicación de consola con menú interactivo para la venta y control de boletos de una cooperativa de transporte (Ibarra). Los datos se guardan en el archivo transporte.json.
+### Reportes
 
-Clases principales
-Viaje: ruta, fecha y hora de salida, capacidad de asientos, tarifa base, si es directo y asientos ocupados.
-Boleto: viaje, asiento, pasajero, descuento aplicado, valor pagado, estado de anulación y fecha de emisión.
-Pasajero: cédula, nombre y si aplica descuento.
-DatosTransporte: contenedor de viajes, boletos y pasajeros para la persistencia.
-Ejercicio3_Transporte: menú, operaciones y reportes.
-Menú
-Venta de boleto
-Anulación de boleto
-Reporte: mapa de asientos de un viaje
-Reporte: recaudación por ruta
-Reporte: porcentaje de ocupación por viaje
-Reporte: auditoría de asientos libres
-Volver al menú principal
-Reglas de negocio
-No se pueden vender boletos de viajes que ya salieron ni de asientos ocupados.
-Los viajes no directos (intermedios) tienen un 15 % de descuento sobre la tarifa base.
-Los pasajeros de tercera edad o con discapacidad reciben un 50 % de descuento adicional.
-Un boleto solo se puede anular hasta 2 horas antes de la salida; al anularlo se libera el asiento.
-Datos de prueba
+- Auditoría de ejemplares disponibles
+- Préstamos vencidos
+- Historial de un usuario
+- Materiales más prestados
+- Multas recaudadas por período
+
+---
+
+## Ejercicio 2: Sistema de Cuentas
+
+**Responsable:** Sebastián Valladares
+
+Administra las cuentas de los socios de una cooperativa de ahorro y crédito de Imbabura. Cada socio puede tener una o varias cuentas.
+
+### Clases principales
+
+- **Socio**: titular que puede tener varias cuentas.
+- **Cuenta** (base), con **CuentaAhorro** y **CuentaCorriente** como derivadas.
+- **RegistroTransferencia**: registro de cada movimiento con el saldo resultante.
+- **Reporte**: consultas y reportes generales.
+
+### Reglas de negocio
+
+| Tipo de cuenta | Interés | Condición |
+|----------------|---------|-----------|
+| Ahorro | 4 % anual, calculado mensualmente sobre el saldo | Saldo mínimo de $5 |
+| Corriente | No genera intereses | Permite sobregiro de hasta $200 |
+
+- Todo depósito o retiro debe ser mayor que cero.
+- Una **transferencia** se registra como un retiro en la cuenta de origen y un depósito en la de destino. Si alguna de las dos operaciones no se puede realizar, ninguna cuenta cambia.
+- No se puede transferir a la misma cuenta.
+- No se cierra una cuenta con saldo distinto de cero.
+- Una cuenta con movimientos no se elimina: se marca como inactiva.
+
+### Operaciones
+
+- Depositar y retirar
+- Transferir entre cuentas
+- Aplicar interés mensual (cuentas de ahorro)
+- Cerrar cuenta
+
+### Reportes
+
+- Estado de cuenta, con el saldo después de cada movimiento
+- Intereses del mes de todas las cuentas de ahorro
+- Cuentas en sobregiro
+- Total depositado y retirado en un período
+- Auditoría de saldos
+
+---
+
+## Ejercicio 3: Cooperativa de Transporte
+
+**Responsable:** Héctor Quicuango
+
+Aplicación de consola con menú interactivo para la venta y control de boletos de una cooperativa de transporte (Ibarra). Los datos se guardan en el archivo `transporte.json`.
+
+### Clases principales
+
+- **Viaje**: ruta, fecha y hora de salida, capacidad de asientos, tarifa base, si es directo y asientos ocupados.
+- **Boleto**: viaje, asiento, pasajero, descuento aplicado, valor pagado, estado de anulación y fecha de emisión.
+- **Pasajero**: cédula, nombre y si aplica descuento.
+- **DatosTransporte**: contenedor de viajes, boletos y pasajeros para la persistencia.
+- **Ejercicio3_Transporte**: menú, operaciones y reportes.
+
+### Menú
+
+1. Venta de boleto
+2. Anulación de boleto
+3. Reporte: mapa de asientos de un viaje
+4. Reporte: recaudación por ruta
+5. Reporte: porcentaje de ocupación por viaje
+6. Reporte: auditoría de asientos libres
+7. Volver al menú principal
+
+### Reglas de negocio
+
+- No se pueden vender boletos de viajes que ya salieron ni de asientos ocupados.
+- Los viajes **no directos** (intermedios) tienen un **15 % de descuento** sobre la tarifa base.
+- Los pasajeros de tercera edad o con discapacidad reciben un **50 % de descuento** adicional.
+- Un boleto solo se puede anular hasta **2 horas antes** de la salida; al anularlo se libera el asiento.
+
+### Datos de prueba
 
 Si no existe información guardada, se cargan tres viajes de ejemplo:
 
-ID	Ruta	Capacidad	Tarifa base	Directo
-V-QUITO	Ibarra-Quito	20	$4.00	Sí
-V-TULCAN	Ibarra-Tulcán	15	$3.50	No
-V-OTAVALO	Ibarra-Otavalo	10	$1.00	Sí
+| ID | Ruta | Capacidad | Tarifa base | Directo |
+|----|------|-----------|-------------|---------|
+| V-QUITO | Ibarra-Quito | 20 | $4.00 | Sí |
+| V-TULCAN | Ibarra-Tulcán | 15 | $3.50 | No |
+| V-OTAVALO | Ibarra-Otavalo | 10 | $1.00 | Sí |
 
-Ejercicio 4
+---
 
-Responsable: Ana Belén
+## Ejercicio 4: Cafetería de la UTN
 
-Pendiente de desarrollo.
+**Responsable:** Ana Belén
 
-Ejercicio 5
+Controla el menú de una cafetería y el inventario de ingredientes, descontando el stock en cada venta.
 
-Responsable: Danilo Godoy
+### Clases principales
 
-Modela la recepción en consignación, ventas, devoluciones y liquidaciones de artesanías (textiles y tallas en madera) de emprendedores de varias comunidades de Otavalo.
+- **Producto** (abstracta): `Id`, `Nombre` y el método abstracto `CalcularPrecioVenta()`. Tiene dos derivadas:
+  - **Plato**: se prepara con una receta (lista de ingredientes).
+  - **Bebida**: se vende por unidades con stock propio.
+- **Ingrediente**: id, nombre, unidad de medida (`kg` o `litros`), costo unitario, stock actual y stock mínimo.
+- **RecetaElemento**: ingrediente y cantidad necesaria dentro de una receta.
+- **Cafeteria**: inventario de ingredientes, menú de productos y la venta de productos.
 
-Clases principales
-Artesania (clase abstracta base), con Textil y TallaMadera como derivadas.
-Artesano: datos personales del emprendedor y comunidad asociada.
-Comunidad: identificación y nombre de la comunidad de origen.
-Movimiento: registro transaccional de recepción, ventas y devoluciones, con cálculo de comisiones y montos.
-Tienda: contenedor de listas e implementación de métodos operativos y reportes administrativos.
-Reglas de negocio
-Tipo de artesanía	Comisión de la tienda
-Textil	20%
-Talla en madera	25%
-Una artesanía que lleva más de 90 días en la tienda debe marcarse para su devolución.
-No se vende ni se devuelve una cantidad mayor que las unidades disponibles.
-Una artesanía solo se devuelve al artesano dueño de la pieza.
-No se elimina un artesano que tiene artesanías registradas ni una artesanía que tiene movimientos.
-Reportes
-Liquidación de cada artesano en un período (total vendido, comisión y monto a pagar)
-Artesanías que deben devolverse (> 90 días)
-Comunidades con más ventas
-Artesanías más vendidas
-Auditoría de unidades disponibles
+### Reglas de negocio
 
-Flujo de trabajo con Git
-Actualizar antes de empezar: git pull
-Trabajar en los archivos del ejercicio propio.
-Guardar los cambios:
-bash
+| Producto | Cálculo del precio de venta |
+|----------|-----------------------------|
+| Plato | Doble de su costo. El costo es la suma de `cantidad necesaria × costo unitario` de cada ingrediente de la receta |
+| Bebida | Precio base + 15 % de IVA |
+
+- Al vender un **plato**, primero se valida que haya stock suficiente de **todos** los ingredientes de la receta; si alguno falta, no se vende nada. Si pasa la validación, se descuenta el stock de cada ingrediente.
+- Al vender una **bebida**, se valida que haya unidades suficientes y se descuentan del stock.
+- Un ingrediente está **bajo el mínimo** cuando su stock actual es menor o igual a su stock mínimo.
+
+### Datos de prueba
+
+`Program.cs` incluye un ejemplo con dos ingredientes y un plato:
+
+| Ingrediente | Unidad | Costo unitario | Stock | Mínimo |
+|-------------|--------|----------------|-------|--------|
+| Café en grano | kg | $15.00 | 5.0 | 1.0 |
+| Leche | litros | $1.20 | 10.0 | 2.0 |
+
+**Capuchino Especial:** 0.05 kg de café y 0.2 litros de leche. Costo de producción $0.99 y precio de venta $1.98.
+
+---
+
+## Ejercicio 5: Tienda de Artesanías
+
+**Responsable:** Daniel Godoy
+
+Administra una tienda que vende artesanías de artesanos de distintas comunidades, cobrando una comisión por cada venta.
+
+### Clases principales
+
+- **Artesania** (abstracta): código, nombre, precio, stock, fecha en que se puso en venta y artesano propietario. Tiene dos derivadas:
+  - **Textil**
+  - **TallaMadera**
+- **Artesano**: nombres, apellidos, cédula, teléfono, correo y comunidad.
+- **Comunidad**: id y nombre.
+- **Movimiento**: registro de cada operación (`RECEPCION`, `VENTA` o `DEVOLUCION`) con cantidad, valor total, comisión de la tienda y monto para el artesano.
+- **Tienda**: contiene artesanos, artesanías, comunidades y movimientos; registra las operaciones y genera los reportes.
+
+### Reglas de negocio
+
+| Tipo de artesanía | Comisión de la tienda |
+|-------------------|-----------------------|
+| Textil | 20 % del valor de la venta |
+| Talla en madera | 25 % del valor de la venta |
+
+- El monto que recibe el artesano es el valor de la venta menos la comisión.
+- No puede haber dos artesanías con el mismo código.
+- La cantidad de una venta debe ser mayor que cero y no puede superar el stock disponible.
+- Una artesanía solo se puede devolver a su artesano propietario, y la cantidad no puede superar el stock.
+- Una artesanía que lleva **más de 90 días** en la tienda debe devolverse a su dueño.
+- No se elimina un artesano que tiene artesanías registradas.
+- No se elimina una artesanía que tiene movimientos asociados.
+
+### Operaciones
+
+- Registrar recepción de una artesanía
+- Registrar venta
+- Registrar devolución
+- Eliminar artesano o artesanía (con las validaciones anteriores)
+
+### Reportes
+
+- Liquidación de cada artesano en un período (vendido, comisión de la tienda y valor a pagar)
+- Artesanías que deben devolverse (más de 90 días con stock)
+- Comunidades con más ventas
+- Artesanías más vendidas
+- Auditoría de unidades disponibles
+
+### Datos de prueba
+
+`Program.cs` incluye un ejemplo (comentado) con las comunidades Peguche y Quinchuqui, dos artesanos, un poncho textil de $100 (10 unidades) y una batea de madera de $80 (5 unidades), con ventas, una devolución y casos de error controlados.
+
+---
+
+## Flujo de trabajo con Git
+
+1. Actualizar antes de empezar: `git pull`
+2. Trabajar en los archivos del ejercicio propio.
+3. Guardar los cambios:
+   ```bash
    git add .
    git commit -m "Descripción del cambio"
    git push
-Si git push es rechazado, hacer primero git pull para integrar los cambios de los compañeros y volver a intentar.
+   ```
+4. Si `git push` es rechazado, hacer primero `git pull` para integrar los cambios de los compañeros y volver a intentar.
