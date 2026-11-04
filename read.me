@@ -1,0 +1,160 @@
+Trabajo1-BDD
+
+Proyecto grupal desarrollado en C# (.NET Framework) con Visual Studio 2026. Es una aplicación de consola que reúne varios ejercicios de modelado y programación orientada a objetos, cada uno a cargo de un integrante del equipo.
+
+Repositorio: https://github.com/AndyGuamba/Trabajo1-BDD.git
+
+Integrantes y responsabilidades
+#	Integrante	Parte asignada	Estado
+1	Andy Guamba	Ejercicio 1: Sistema de Biblioteca	Completado
+2	Sebastián Valladares	Ejercicio 2: Sistema de Cuentas (Ahorro y Corriente)	Completado
+3	Héctor Quicuango	Ejercicio 3: Cooperativa de Transporte	Completado
+4	Ana Belén	Ejercicio 4	Pendiente
+5	Daniel Godoy	Ejercicio 5	Pendiente
+Requisitos
+Visual Studio 2019 o superior
+.NET Framework (proyecto de aplicación de consola)
+Git
+
+El Ejercicio 3 usa System.Text.Json. Si Visual Studio no lo reconoce, instalar el paquete NuGet System.Text.Json.
+
+Cómo ejecutar
+Clonar el repositorio:
+bash
+   git clone https://github.com/AndyGuamba/Trabajo1-BDD.git
+Abrir la solución Trabajo1-BDD.sln en Visual Studio.
+En Program.cs, dejar descomentado únicamente el ejercicio que se desea probar (los demás están comentados).
+Presionar F5 o Ctrl + F5 para ejecutar.
+
+Actualmente Program.cs ejecuta el Ejercicio 3:
+
+csharp
+Console.Clear();
+Ejercicio_3.Ejercicio3_Transporte.Ejecutar();
+Estructura del proyecto
+Trabajo1-BDD/
+├── Program.cs                  # Punto de entrada, pruebas de cada ejercicio
+├── Ejercicio_1/                # Biblioteca
+│   ├── Material.cs
+│   ├── Libro.cs
+│   ├── Revista.cs
+│   ├── Ejemplar.cs
+│   ├── Usuario.cs
+│   ├── Prestamo.cs
+│   └── Biblioteca.cs
+├── Ejercicio_2/                # Cuentas bancarias
+│   ├── Cuenta.cs
+│   ├── CuentaAhorro.cs
+│   ├── CuentaCorriente.cs
+│   ├── RegistroTransferencia.cs
+│   ├── Socio.cs
+│   └── Reporte.cs
+└── Ejercicio_3/                # Transporte
+    ├── Viaje.cs
+    ├── Boleto.cs
+    ├── Pasajero.cs
+    ├── DatosTransporte.cs
+    └── Ejercicio3_Transporte.cs
+
+Ejercicio 1: Sistema de Biblioteca
+
+Responsable: Andy Guamba
+
+Gestiona el préstamo de materiales (libros y revistas) a los usuarios de una biblioteca.
+
+Clases principales
+Material (base), con Libro y Revista como derivadas.
+Ejemplar: copia física de un material, con código y disponibilidad.
+Usuario: cédula, nombre, multas pendientes e historial de préstamos.
+Prestamo: relaciona usuario y ejemplar; guarda fecha de salida, días permitidos, tarifa de multa, fecha de entrega y multa generada.
+Biblioteca: contiene usuarios, ejemplares y préstamos, y genera los reportes.
+Reglas de negocio
+Material	Días de préstamo	Multa por día de retraso
+Libro	7	$0.25
+Revista	3	$0.50
+Un usuario puede tener como máximo 3 préstamos activos.
+Un usuario con multas pendientes no puede solicitar nuevos préstamos.
+Al devolver, si hay retraso, la multa se calcula como días de retraso × tarifa y se suma a las multas pendientes del usuario.
+Reportes
+Auditoría de ejemplares disponibles
+Préstamos vencidos
+Historial de un usuario
+Materiales más prestados
+Multas recaudadas por período
+Ejercicio 2: Sistema de Cuentas
+
+Responsable: Sebastián Valladares
+
+Modela socios con cuentas de ahorro y corriente, con operaciones y reportes.
+
+Clases principales
+Socio: titular que puede tener varias cuentas.
+Cuenta (base), con CuentaAhorro y CuentaCorriente como derivadas.
+RegistroTransferencia: registro de movimientos entre cuentas.
+Reporte: consultas y reportes generales.
+Operaciones
+Depositar y retirar
+Transferir entre cuentas
+Aplicar interés mensual (cuentas de ahorro)
+Cerrar cuenta
+Reportes
+Estado de cuenta
+Intereses de cuentas de ahorro
+Cuentas en sobregiro
+Total depositado y retirado en un período
+Auditoría de saldos
+Ejercicio 3: Cooperativa de Transporte
+
+Responsable: Héctor Quiguango
+
+Aplicación de consola con menú interactivo para la venta y control de boletos de una cooperativa de transporte (Ibarra). Los datos se guardan en el archivo transporte.json.
+
+Clases principales
+Viaje: ruta, fecha y hora de salida, capacidad de asientos, tarifa base, si es directo y asientos ocupados.
+Boleto: viaje, asiento, pasajero, descuento aplicado, valor pagado, estado de anulación y fecha de emisión.
+Pasajero: cédula, nombre y si aplica descuento.
+DatosTransporte: contenedor de viajes, boletos y pasajeros para la persistencia.
+Ejercicio3_Transporte: menú, operaciones y reportes.
+Menú
+Venta de boleto
+Anulación de boleto
+Reporte: mapa de asientos de un viaje
+Reporte: recaudación por ruta
+Reporte: porcentaje de ocupación por viaje
+Reporte: auditoría de asientos libres
+Volver al menú principal
+Reglas de negocio
+No se pueden vender boletos de viajes que ya salieron ni de asientos ocupados.
+Los viajes no directos (intermedios) tienen un 15 % de descuento sobre la tarifa base.
+Los pasajeros de tercera edad o con discapacidad reciben un 50 % de descuento adicional.
+Un boleto solo se puede anular hasta 2 horas antes de la salida; al anularlo se libera el asiento.
+Datos de prueba
+
+Si no existe información guardada, se cargan tres viajes de ejemplo:
+
+ID	Ruta	Capacidad	Tarifa base	Directo
+V-QUITO	Ibarra-Quito	20	$4.00	Sí
+V-TULCAN	Ibarra-Tulcán	15	$3.50	No
+V-OTAVALO	Ibarra-Otavalo	10	$1.00	Sí
+
+Ejercicio 4
+
+Responsable: Ana Belén
+
+Pendiente de desarrollo.
+
+Ejercicio 5
+
+Responsable: Daniel Godoy
+
+Pendiente de desarrollo.
+
+Flujo de trabajo con Git
+Actualizar antes de empezar: git pull
+Trabajar en los archivos del ejercicio propio.
+Guardar los cambios:
+bash
+   git add .
+   git commit -m "Descripción del cambio"
+   git push
+Si git push es rechazado, hacer primero git pull para integrar los cambios de los compañeros y volver a intentar.
