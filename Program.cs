@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Trabajo1_BDD.Ejercicio_1;
 using Trabajo1_BDD.Ejercicio_2;
+using Trabajo1_BDD.Ejercicio_4;
 
 namespace Trabajo1_BDD
 {
@@ -13,8 +14,6 @@ namespace Trabajo1_BDD
     {
         static void Main(string[] args)
         {
-
-
             //              EJERCICIO 1
 
             // Biblioteca miBiblioteca = new Biblioteca();
@@ -45,7 +44,7 @@ namespace Trabajo1_BDD
             // Prestamo p3 = new Prestamo(user2, ej3, DateTime.Now.AddDays(-1), 3, 0.50);
             // miBiblioteca.PrestamosTotales.Add(p3);
 
-            //Console.WriteLine("========== MÓDULO DE REPORTES ==========");
+            // Console.WriteLine("========== MÓDULO DE REPORTES ==========");
 
             // miBiblioteca.ReporteAuditoriaDisponibles();
             // miBiblioteca.ReporteVencidos();
@@ -63,54 +62,54 @@ namespace Trabajo1_BDD
             //              EJERCICIO #2
 
 
-            //Socio socio1 = new Socio("Eduardo", "Valladares", "1001");
-            //Socio socio2 = new Socio("Carlos", "Perez", "1002");
+            // Socio socio1 = new Socio("Eduardo", "Valladares", "1001");
+            // Socio socio2 = new Socio("Carlos", "Perez", "1002");
 
-            //CuentaAhorro ahorro1 = new CuentaAhorro(4, socio1, 500);
-            //CuentaCorriente corriente1 = new CuentaCorriente(socio1, 100);
+            // CuentaAhorro ahorro1 = new CuentaAhorro(4, socio1, 500);
+            // CuentaCorriente corriente1 = new CuentaCorriente(socio1, 100);
 
-            //CuentaAhorro ahorro2 = new CuentaAhorro(4, socio2, 1000);
-            //CuentaCorriente corriente2 = new CuentaCorriente(socio2, 50);
+            // CuentaAhorro ahorro2 = new CuentaAhorro(4, socio2, 1000);
+            // CuentaCorriente corriente2 = new CuentaCorriente(socio2, 50);
 
-            //socio1.AgregarCuenta(ahorro1);
-            //socio1.AgregarCuenta(corriente1);
+            // socio1.AgregarCuenta(ahorro1);
+            // socio1.AgregarCuenta(corriente1);
 
-            //socio2.AgregarCuenta(ahorro2);
-            //socio2.AgregarCuenta(corriente2);
+            // socio2.AgregarCuenta(ahorro2);
+            // socio2.AgregarCuenta(corriente2);
 
-            //Reporte.AgregarSocio(socio1);
-            //Reporte.AgregarSocio(socio2);
+            // Reporte.AgregarSocio(socio1);
+            // Reporte.AgregarSocio(socio2);
 
-            //Console.WriteLine(ahorro1.Depositar(100));
-            //Console.WriteLine(ahorro1.Retirar(50));
+            // Console.WriteLine(ahorro1.Depositar(100));
+            // Console.WriteLine(ahorro1.Retirar(50));
 
-            //Console.WriteLine(
-            //Cuenta.Transferir(ahorro1, corriente1, 200));
+            // Console.WriteLine(
+            // Cuenta.Transferir(ahorro1, corriente1, 200));
 
-            //Console.WriteLine(
-            //Cuenta.Transferir(ahorro1, corriente1, 1000));
+            // Console.WriteLine(
+            // Cuenta.Transferir(ahorro1, corriente1, 1000));
 
-            //Console.WriteLine(corriente1.Retirar(300));
+            // Console.WriteLine(corriente1.Retirar(300));
 
-            //ahorro1.AplicarInteresMensual();
-            //ahorro2.AplicarInteresMensual();
+            // ahorro1.AplicarInteresMensual();
+            // ahorro2.AplicarInteresMensual();
 
-            //Console.WriteLine(Reporte.EstadoCuenta(ahorro1));
-            //Console.WriteLine(Reporte.EstadoCuenta(corriente1));
+            // Console.WriteLine(Reporte.EstadoCuenta(ahorro1));
+            // Console.WriteLine(Reporte.EstadoCuenta(corriente1));
 
-            //Console.WriteLine(Reporte.InteresesCuentasAhorro());
-            //Console.WriteLine(Reporte.CuentasSobreGiro());
+            // Console.WriteLine(Reporte.InteresesCuentasAhorro());
+            // Console.WriteLine(Reporte.CuentasSobreGiro());
 
-            //Console.WriteLine(
+            // Console.WriteLine(
             //    Reporte.TotalDepositadoRetirado(
             //        DateTime.Now.AddMonths(-1),
             //        DateTime.Now));
 
-            //Console.WriteLine(Reporte.AuditoriaSaldos());
+            // Console.WriteLine(Reporte.AuditoriaSaldos());
 
-            //Console.WriteLine(ahorro1.CerrarCuenta());
+            // Console.WriteLine(ahorro1.CerrarCuenta());
 
-            //Console.ReadKey();
+            // Console.ReadKey();
 
 
             //----------------------------------------------------------------------------------------------
@@ -120,6 +119,44 @@ namespace Trabajo1_BDD
 
             Console.Clear();
             Ejercicio_3.Ejercicio3_Transporte.Ejecutar();
+
+
+            //----------------------------------------------------------------------------------------------
+
+            //              EJERCICIO #4 (CAFETERÍA DE LA UTN)
+
+            // Console.Clear();
+            // Console.OutputEncoding = Encoding.UTF8;
+            // Console.WriteLine("=== CAFETERÍA DE LA UTN ===");
+
+            // Cafeteria cafeteria = new Cafeteria();
+
+            // Ingrediente cafe = new Ingrediente { Id = "I01", Nombre = "Café en grano", UnidadMedida = "kg", CostoUnitario = 15.0m, StockActual = 5.0, StockMinimo = 1.0 };
+            // Ingrediente leche = new Ingrediente { Id = "I02", Nombre = "Leche", UnidadMedida = "litros", CostoUnitario = 1.2m, StockActual = 10.0, StockMinimo = 2.0 };
+
+            // cafeteria.InventarioIngredientes.Add(cafe);
+            // cafeteria.InventarioIngredientes.Add(leche);
+
+            // Plato capuchino = new Plato
+            // {
+            //     Id = "P01",
+            //     Nombre = "Capuchino Especial",
+            //     Receta = new List<RecetaElemento>
+            //     {
+            //         new RecetaElemento { Ingrediente = cafe, CantidadNecesaria = 0.05 },
+            //         new RecetaElemento { Ingrediente = leche, CantidadNecesaria = 0.2 }
+            //     }
+            // };
+
+            // cafeteria.MenuProductos.Add(capuchino);
+
+            // Console.WriteLine($"Plato registrado: {capuchino.Nombre}");
+            // Console.WriteLine($"Costo de producción: ${capuchino.CalcularCosto():F2}");
+            // Console.WriteLine($"Precio de venta (x2): ${capuchino.CalcularPrecioVenta():F2}");
+
+            // Console.WriteLine("\nPresiona cualquier tecla para continuar...");
+            // Console.ReadKey();
+
 
             //----------------------------------------------------------------------------------------------
 
