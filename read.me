@@ -10,7 +10,7 @@ Integrantes y responsabilidades
 2	Sebastián Valladares	Ejercicio 2: Sistema de Cuentas (Ahorro y Corriente)	Completado
 3	Héctor Quicuango	Ejercicio 3: Cooperativa de Transporte	Completado
 4	Ana Belén	Ejercicio 4	Pendiente
-5	Daniel Godoy	Ejercicio 5	Pendiente
+5	Danilo Godoy	Ejercicio 5: Tienda de Artesanías de Otavalo	Completado
 Requisitos
 Visual Studio 2019 o superior
 .NET Framework (proyecto de aplicación de consola)
@@ -49,12 +49,20 @@ Trabajo1-BDD/
 │   ├── RegistroTransferencia.cs
 │   ├── Socio.cs
 │   └── Reporte.cs
-└── Ejercicio_3/                # Transporte
-    ├── Viaje.cs
-    ├── Boleto.cs
-    ├── Pasajero.cs
-    ├── DatosTransporte.cs
-    └── Ejercicio3_Transporte.cs
+├── Ejercicio_3/                # Transporte
+│   ├── Viaje.cs
+│   ├── Boleto.cs
+│   ├── Pasajero.cs
+│   ├── DatosTransporte.cs
+│   └── Ejercicio3_Transporte.cs
+└── Ejercicio_5/                # Tienda de artesanías
+    ├── Artesania.cs
+    ├── Artesano.cs
+    ├── Comunidad.cs
+    ├── Movimiento.cs
+    ├── TallaMadera.cs
+    ├── Textil.cs
+    └── Tienda.cs
 
 Ejercicio 1: Sistema de Biblioteca
 
@@ -145,9 +153,30 @@ Pendiente de desarrollo.
 
 Ejercicio 5
 
-Responsable: Daniel Godoy
+Responsable: Danilo Godoy
 
-Pendiente de desarrollo.
+Modela la recepción en consignación, ventas, devoluciones y liquidaciones de artesanías (textiles y tallas en madera) de emprendedores de varias comunidades de Otavalo.
+
+Clases principales
+Artesania (clase abstracta base), con Textil y TallaMadera como derivadas.
+Artesano: datos personales del emprendedor y comunidad asociada.
+Comunidad: identificación y nombre de la comunidad de origen.
+Movimiento: registro transaccional de recepción, ventas y devoluciones, con cálculo de comisiones y montos.
+Tienda: contenedor de listas e implementación de métodos operativos y reportes administrativos.
+Reglas de negocio
+Tipo de artesanía	Comisión de la tienda
+Textil	20%
+Talla en madera	25%
+Una artesanía que lleva más de 90 días en la tienda debe marcarse para su devolución.
+No se vende ni se devuelve una cantidad mayor que las unidades disponibles.
+Una artesanía solo se devuelve al artesano dueño de la pieza.
+No se elimina un artesano que tiene artesanías registradas ni una artesanía que tiene movimientos.
+Reportes
+Liquidación de cada artesano en un período (total vendido, comisión y monto a pagar)
+Artesanías que deben devolverse (> 90 días)
+Comunidades con más ventas
+Artesanías más vendidas
+Auditoría de unidades disponibles
 
 Flujo de trabajo con Git
 Actualizar antes de empezar: git pull
