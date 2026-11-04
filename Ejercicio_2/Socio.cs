@@ -65,23 +65,12 @@ namespace Trabajo1_BDD.Ejercicio_2
 
         public bool EliminarCuenta(Cuenta cuenta)
         {
-            if (cuenta == null || !cuentas.Contains(cuenta))
-            {
-                return false;
-            }
+            if (cuenta == null || !cuentas.Contains(cuenta)) return false;
+            if (cuenta.Saldo != 0) return false;          // primero el saldo
 
             if (cuenta.Historial.Count > 0)
-            {
-                // Eliminación lógica.
-                return cuenta.DesactivarCuenta();
-            }
+                return cuenta.CerrarCuenta();             // eliminación lógica
 
-            if (cuenta.Saldo != 0)
-            {
-                return false;
-            }
-
-            // Si no tiene movimientos, se puede eliminar físicamente.
             return cuentas.Remove(cuenta);
         }
 

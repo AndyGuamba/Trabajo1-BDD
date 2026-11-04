@@ -170,16 +170,7 @@ namespace Trabajo1_BDD.Ejercicio_2
             return true;
         }
 
-        public bool DesactivarCuenta()
-        {
-            if (!estado)
-            {
-                return false;
-            }
-
-            estado = false;
-            return true;
-        }
+       
 
         public bool ActivarCuenta()
         {
